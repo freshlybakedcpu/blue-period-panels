@@ -36,7 +36,7 @@ module.exports.run = () => {
 
 	console.log(imgList);
 
-	const listDir = path.join(__dirname, '../index.md');
+	const listDir = path.join(__dirname, '../docs/index.md');
 
 	if(!fs.existsSync(listDir)) {
 		fs.writeFileSync(listDir, '');
