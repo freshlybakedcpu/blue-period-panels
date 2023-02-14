@@ -1,5 +1,5 @@
 # blue-period-panels
-entry point: `bot.js`
+Entry point: `bot.js`
 
 ### A few components are missing for security concerns and storage limitations:  
 ##### Create the directories `panels` and `pfps`.  
