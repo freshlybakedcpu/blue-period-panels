@@ -44,7 +44,8 @@ module.exports.run = () => {
 		fs.truncateSync(listDir, 0);
 	}
 
-	fs.appendFileSync(listDir, `Total: ${imgList.length}\n\n`);
+	fs.appendFileSync(listDir, `# Total: ${imgList.length}\n`);
+	fs.appendFileSync(listDir, '```');
 
 	let currentVolume = -1;
 	let currentChapter = -1;
@@ -65,13 +66,14 @@ module.exports.run = () => {
 			currentPage = e[2][0];
 		}
 		if (i + 1 >= a.length) {
-			fs.appendFileSync(listDir, `${e[3]}\n`);
+			fs.appendFileSync(listDir, `${e[3]}  \n`);
 		} else if(a[i + 1][1] > currentChapter || a[i + 1][2][0] > currentPage) {
-			fs.appendFileSync(listDir, `${e[3]}\n`);
+			fs.appendFileSync(listDir, `${e[3]}  \n`);
 		}
 	});
+	fs.appendFileSync(listDir, '```');
 	// Updates Twitter bio with the current number of panels
-	bioUpdater.run(numberWithCommas(imgList.length));
+	// bioUpdater.run(numberWithCommas(imgList.length));
 };
 
 function numberWithCommas(num) {
