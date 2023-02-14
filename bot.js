@@ -54,6 +54,9 @@ cron.schedule('0 */4 * * *', () => {
 
 // Update profile picture weekly
 cron.schedule('0 0 * * 0', () => {
+	panelLister.run();
+
+	// Updating profile picture
 	// e.g. BLPpanels-1-1-2,3-1.jpg
 	const fileRegex = /^(BLPpanels)-[0-9]+-[0-9]+-([0-9]+|[0-9]+,[0-9]+)-[0-9]+(\.(jpe?g|png))/;
 	const imgList = fs.readdirSync(path.join(__dirname, 'pfps')).filter(e => fileRegex.test(e));

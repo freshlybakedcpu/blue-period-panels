@@ -1,6 +1,8 @@
 const fs = require('fs');
 const path = require('path');
 
+const bioUpdater = require('./bioUpdater.js');
+
 const panelDir = path.join(__dirname, '../panels');
 const fileRegex = /^[0-9]+-[0-9]+-([0-9]+|[0-9]+,[0-9]+)-[0-9]+(\.(jpe?g|png))$/;
 
@@ -68,4 +70,10 @@ module.exports.run = () => {
 			fs.appendFileSync(listDir, `${e[3]}\n`);
 		}
 	});
+	// Updates Twitter bio with the current number of panels
+	bioUpdater.run(numberWithCommas(imgList.length));
 };
+
+function numberWithCommas(num) {
+	return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+}

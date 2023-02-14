@@ -9,7 +9,7 @@ module.exports.run = (totalPanels) => {
 	const consumer_secret = config.consumer_secret;
 
 	const bio = 'Posts random panels from Tsubasa Yamaguchi\'s manga "Blue Period" four times per day.'
-				+ ' ' + `Currently running with ${totalPanels} panels.` + ' ' + 'Run by @' + 'freshlybakedcpu' + '.';
+				+ ' ' + `Currently running with ${totalPanels} panels.`;
 
 	const endpointURL = `https://api.twitter.com/1.1/account/update_profile.json?username=BLPpanels&description=${encodeURIComponent(bio)}`;
 
