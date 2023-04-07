@@ -1,0 +1,22 @@
+{
+  "name": "blue-period-panels",
+  "version": "1.0.0",
+  "description": "Twitter bot for posting panels from the manga \"Blue Period.\" at regular intervals.",
+  "main": "bot.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "freshlybakedcpu",
+  "license": "ISC",
+  "dependencies": {
+    "crypto": "^1.0.1",
+    "got": "^11.8.2",
+    "node-cron": "^3.0.0",
+    "oauth-1.0a": "^2.2.6",
+    "twit": "^2.2.11"
+  },
+  "devDependencies": {
+    "eslint": "^7.29.0",
+    "safe-regex": "^2.1.1"
+  }
+}
